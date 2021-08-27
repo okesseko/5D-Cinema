@@ -1,42 +1,26 @@
 .header {
   &::before,
   &::after {
-    top: 100px;
-    position: absolute;
-    height: 24px;
+    @apply absolute top-c-100 h-6 border-t-4 border-lightBlue;
     width: calc(50% - 221px);
-    border-top: solid rgb(0, 221, 242) 4px;
     content: "";
   }
   &::before {
-    border-right: solid rgb(0, 221, 242) 4px;
-    border-top-right-radius: 4px;
+    @apply rounded-tr border-r-4;
   }
   &::after {
-    right: 0;
-    border-left: solid rgb(0, 221, 242) 4px;
-    border-top-left-radius: 4px;
+    @apply right-0 rounded-tl border-l-4;
   }
   ul {
     @apply relative flex justify-center;
-
     li {
-      @apply w-48 my-9 mx-6 text-3xl text-center inline-block;
+      @apply w-48 my-9 mx-6 text-3xl text-center inline-block cursor-pointer;
     }
     .image {
-      @apply relative mt-7 ;
+      @apply relative mt-7 cursor-pointer;
       &::before {
+        @apply absolute h-5 w-c-450 bottom-0 -left-1 border-4 border-t-0 rounded-br rounded-bl border-lightBlue;
         content: "";
-        position: absolute;
-        bottom: 0;
-        margin: auto;
-        border: solid rgb(0, 221, 242) 4px;
-        border-top: 0;
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
-        left: -4px;
-        width: 450px;
-        height: 20px;
       }
     }
   }

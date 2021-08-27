@@ -8,7 +8,10 @@ module.exports = {
         lightBlue: "#00DDF2",
         gray: "#A6A6A6",
       },
-      spacing: {},
+      spacing: {
+        "c-100": "100px",
+        "c-450": "450px",
+      },
     },
   },
   variants: {
