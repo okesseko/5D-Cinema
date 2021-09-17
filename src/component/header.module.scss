@@ -1,27 +1,24 @@
 .header {
-  &::before,
-  &::after {
-    @apply absolute top-c-100 h-6 border-t-4 border-lightBlue;
-    width: calc(50% - 221px);
-    content: "";
-  }
-  &::before {
-    @apply rounded-tr border-r-4;
-  }
-  &::after {
-    @apply right-0 rounded-tl border-l-4;
-  }
+  position: fixed;
+  height: 9em;
+  width: 100%;
+  background: url(../../public/header.png) center no-repeat;
+  background-size: 100% 100%;
+  z-index: 1000;
   ul {
     @apply relative flex justify-center;
     li {
-      @apply w-48 my-9 mx-6 text-3xl text-center inline-block cursor-pointer;
+      @apply relative w-48 my-9 mx-6 text-3xl text-center inline-block cursor-pointer;
+    }
+    .active {
+      &::before {
+        @apply absolute left-0 h-2 w-full bottom-0 border-b-8 border-lightBlue;
+        content: "";
+        box-shadow: 0 0 0.5em rgba(0, 221, 242);
+      }
     }
     .image {
       @apply relative mt-7 cursor-pointer;
-      &::before {
-        @apply absolute h-5 w-c-450 bottom-0 -left-1 border-4 border-t-0 rounded-br rounded-bl border-lightBlue;
-        content: "";
-      }
     }
   }
 }
