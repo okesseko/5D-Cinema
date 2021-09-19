@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -8,7 +8,14 @@ module.exports = {
         lightBlue: "#00DDF2",
         gray: "#A6A6A6",
       },
-      spacing: {},
+      scale: {
+        "c-1": "-1",
+      },
+      spacing: {
+        "c-100": "100px",
+        "c-200": "200px",
+        "c-450": "450px",
+      },
     },
   },
   variants: {

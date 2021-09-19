@@ -1,0 +1,36 @@
+.introduce {
+  @apply w-full h-screen pt-c-100 select-none;
+  .carousel {
+    @apply relative h-full;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: #0000004b;
+    }
+    .side_select {
+      @apply absolute w-2/12 h-full pr-4 z-10 flex justify-end;
+      background: linear-gradient(to left, #000000bd, #00000000);
+      &.right {
+        @apply transform scale-x-c-1;
+      }
+      &.left {
+        @apply right-0;
+      }
+      img {
+        @apply cursor-pointer;
+        min-height: 120px !important;
+        max-height: 120px !important;
+      }
+    }
+    .bottom_dot {
+      @apply absolute w-full h-10 flex items-center justify-center bottom-0 z-20;
+      .dot {
+        @apply w-3 h-3 mx-2  border border-solid border-lightBlue rounded-xl;
+        &.active{
+          @apply bg-lightBlue;
+        }
+      }
+    }
+  }
+}
