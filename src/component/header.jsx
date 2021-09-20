@@ -21,7 +21,7 @@ const Header = () => {
         </Link>
         <Link href="/">
           <div className={style.image}>
-            <Image width={442} height={105} src={"/logo.png"} />
+            <Image width='400%' height='100%' src={"/logo.png"} />
           </div>
         </Link>
         <Link href="/reserve">
