@@ -1,59 +1,74 @@
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import React, { useState } from "react";
 import style from "./introduce.module.scss";
-import autoprefixer from "autoprefixer";
-const IMAGE_SRC = ["/the-flash.jpg", "/maze-runner.jpg", "/spider-man.jpg"];
+import Image from "next/image";
+const IMAGE_SRC = [
+  ["/introduce-about1.png", "/introduce-about2.png"],
+  ["/introduce-env1.png", "/introduce-env2.png"],
+];
+
+const ARTICLE = [
+  "FIVEDM是全台首家沉浸式電影院\n以5D技術帶給您身歷其境感受\n彷彿置身於電影中\n擁有傳統電影院無法提供的極致感受\n\n地址：台北市信義區信義路五段7號98樓\n\n電話：02-1234567",
+  "從德國引進,最新的5D座艙\n採用xled、杜比40、sMell等最新技術\n能根據電影給予觀影者最直觀的五感刺激",
+];
 
 const Introduce = () => {
-  const [imageIndex, setImageIndex] = useState(0);
-  useEffect(() => {
-    const autoChangeImage = setInterval(() => {
-      setImageIndex((imageIndex) => {
-        if (imageIndex + 1 === IMAGE_SRC.length) return 0;
-        else return imageIndex + 1;
-      });
-    }, 5000);
-    return () => {
-      clearInterval(autoChangeImage);
-    };
-  }, []);
+  const [selectedButton, setSelectedButton] = useState(1);
+  const [imageSwitch, setImageSwitch] = useState(0);
   return (
     <div className={style.introduce}>
-      <div className={style.carousel}>
-        <div className={`${style.side_select} ${style.right}`}>
-          <Image
-            onClick={() => {
-              if (imageIndex - 1 === -1) setImageIndex(IMAGE_SRC.length - 1);
-              else setImageIndex(imageIndex - 1);
-            }}
-            src="/next_icon.svg"
-            width={80}
-            height={100}
+      <div className={style.buttonGroup}>
+        <button
+          className={selectedButton === 1 ? style.select : ""}
+          onClick={() => setSelectedButton(1)}
+        >
+          關於影城
+        </button>
+        <button
+          className={selectedButton === 2 ? style.select : ""}
+          onClick={() => setSelectedButton(2)}
+        >
+          環境介紹
+        </button>
+        <button
+          className={selectedButton === 3 ? style.select : ""}
+          onClick={() => setSelectedButton(3)}
+        >
+          票價說明
+        </button>
+      </div>
+      <div className={style.imageWithArticle}>
+        <div className={style.carousel}>
+          <img
+            className={`${style.image} ${imageSwitch === 0 ? "" : style.back}`}
+            src={IMAGE_SRC[selectedButton - 1][0]}
           />
-        </div>
-        <Image src={IMAGE_SRC[imageIndex]} layout="fill" objectFit="cover" />
-        <div className={`${style.side_select} ${style.left}`}>
-          <Image
-            onClick={() => {
-              if (imageIndex + 1 === IMAGE_SRC.length) setImageIndex(0);
-              else setImageIndex(imageIndex + 1);
-            }}
-            src="/next_icon.svg"
-            width={80}
-            height={100}
+          <img
+            className={`${style.image} ${imageSwitch === 1 ? "" : style.back}`}
+            src={IMAGE_SRC[selectedButton - 1][1]}
           />
-        </div>
-        <div className={style.bottom_dot}>
-          {IMAGE_SRC.map((_, index) => (
+          <div className={style.bottom_dot}>
             <span
-              key={index}
               className={`${style.dot} ${
-                imageIndex === index ? style.active : ""
+                imageSwitch === 0 ? style.active : ""
               }`}
-              onClick={() => setImageIndex(index)}
+              onClick={() => {
+                setImageSwitch(0);
+              }}
             />
-          ))}
+            <span
+              className={`${style.dot} ${
+                imageSwitch === 1 ? style.active : ""
+              }`}
+              onClick={() => {
+                setImageSwitch(1);
+              }}
+            />
+          </div>
         </div>
+        <article className={style.article}>
+          <Image src="/introduce.svg" width={100} height={20} />
+          <p>{ARTICLE[selectedButton - 1]}</p>
+        </article>
       </div>
     </div>
   );
