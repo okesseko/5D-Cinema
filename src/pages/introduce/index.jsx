@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import style from "./introduce.module.scss";
+import ImageSwitch from "../../component/imageSwitch";
 import Image from "next/image";
 const IMAGE_SRC = [
   ["/introduce-about1.png", "/introduce-about2.png"],
@@ -13,10 +14,8 @@ const ARTICLE = [
 
 const Introduce = () => {
   const [selectedButton, setSelectedButton] = useState(1);
-  const [imageSwitch, setImageSwitch] = useState(0);
   function handleButton(index) {
     setSelectedButton(index);
-    setImageSwitch(0);
   }
   return (
     <div className={style.introduce}>
@@ -42,38 +41,7 @@ const Introduce = () => {
       </div>
       {selectedButton !== 3 ? (
         <div className={style.imageWithArticle}>
-          <div className={style.carousel}>
-            <img
-              className={`${style.image} ${
-                imageSwitch === 0 ? "" : style.back
-              }`}
-              src={IMAGE_SRC[selectedButton - 1][0]}
-            />
-            <img
-              className={`${style.image} ${
-                imageSwitch === 1 ? "" : style.back
-              }`}
-              src={IMAGE_SRC[selectedButton - 1][1]}
-            />
-            <div className={style.bottom_dot}>
-              <span
-                className={`${style.dot} ${
-                  imageSwitch === 0 ? style.active : ""
-                }`}
-                onClick={() => {
-                  setImageSwitch(0);
-                }}
-              />
-              <span
-                className={`${style.dot} ${
-                  imageSwitch === 1 ? style.active : ""
-                }`}
-                onClick={() => {
-                  setImageSwitch(1);
-                }}
-              />
-            </div>
-          </div>
+          <ImageSwitch images={IMAGE_SRC[selectedButton - 1]} />
           <article className={style.article}>
             <Image src="/introduce.svg" width={100} height={20} />
             <p>{ARTICLE[selectedButton - 1]}</p>
