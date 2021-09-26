@@ -1,5 +1,10 @@
+@tailwind base;
 
-body{
-    background-color: black;
-    color: white;
+@tailwind components;
+
+@tailwind utilities;
+body {
+  font-family: "Noto Sans TC";
+  background-color: black;
+  color: white;
 }
