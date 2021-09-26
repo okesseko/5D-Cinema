@@ -1,0 +1,55 @@
+.activity {
+  @apply my-16 flex justify-center;
+  & > * {
+    @apply mx-10;
+  }
+  .carousel {
+    @apply mt-10;
+  }
+  .imageStyle {
+    width: 400px;
+    height: 350px;
+  }
+  .information {
+    @apply h-full p-5 bg-black border-4 border-solid border-mainBlue;
+    .description {
+      @apply p-6;
+    }
+  }
+
+  .list {
+    @apply w-c-400 h-c-400 border-4 border-solid border-mainBlue;
+
+    .title {
+      @apply sticky top-0 px-6 font-bold  bg-mainBlue;
+    }
+    ul {
+      @apply py-4 overflow-y-scroll;
+      height: 368px;
+      li {
+        @apply px-2 cursor-pointer;
+        &:hover {
+          span {
+            @apply text-black font-bold bg-lightBlue;
+          }
+        }
+        span {
+          @apply block px-4 py-2 transition-all delay-75 ease-in-out;
+
+          &.select {
+            @apply text-black font-bold bg-lightBlue;
+          }
+        }
+      }
+    }
+  }
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: turquoise;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
