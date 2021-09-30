@@ -1,19 +1,14 @@
 .activity {
-  @apply my-16 flex justify-center;
-  & > * {
-    @apply mx-10;
-  }
+  @apply   flex items-center justify-center gap-c-10%;
+    height: calc(100vh - 135px);
   .carousel {
     @apply mt-10;
   }
-  .imageStyle {
-    width: 400px;
-    height: 350px;
-  }
+
   .information {
     @apply h-full p-5 bg-black border-4 border-solid border-mainBlue;
     .description {
-      @apply p-6;
+      @apply p-6 text-2xl leading-10;
     }
   }
 

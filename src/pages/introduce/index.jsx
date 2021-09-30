@@ -50,7 +50,14 @@ const Introduce = () => {
       ) : (
         <div className={style.price}>
           <div className={style.price_intro}>
-            <Image src="/price1.png" width={200} height={200} />
+            <div className={style.price_image}>
+              <Image
+                src="/price1.png"
+                layout="fill"
+                width="100%"
+                height="100%"
+              />
+            </div>
             <h2>全票 NT$700</h2>
             <p>
               一般成人與孩童
@@ -59,7 +66,14 @@ const Introduce = () => {
             </p>
           </div>
           <div className={style.price_intro}>
-            <Image src="/price2.png" width={200} height={200} />
+            <div className={style.price_image}>
+              <Image
+                src="/price2.png"
+                layout="fill"
+                width="100%"
+                height="100%"
+              />
+            </div>
             <h2>早場 NT$600</h2>
             <p>
               23:00~08:00觀看
@@ -68,7 +82,14 @@ const Introduce = () => {
             </p>
           </div>
           <div className={style.price_intro}>
-            <Image src="/price3.png" width={200} height={200} />
+            <div className={style.price_image}>
+              <Image
+                src="/price3.png"
+                layout="fill"
+                width="100%"
+                height="100%"
+              />
+            </div>
             <h2>愛心 NT$350</h2>
             <p>
               持身心障礙手冊者和一位陪同

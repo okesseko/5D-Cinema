@@ -2,8 +2,10 @@
   @apply relative;
   .image {
     @apply relative max-w-none z-10 object-cover;
-    width: 400px;
-    height: 300px;
+    width: 32vw;
+    height: 24vw;
+    min-width: 400x;
+    min-height: 300px;
     &.back {
       @apply absolute top-4 left-4 z-0;
     }

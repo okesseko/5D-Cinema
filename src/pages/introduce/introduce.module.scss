@@ -1,6 +1,7 @@
 .introduce {
   .buttonGroup {
-    @apply my-16 flex justify-center;
+    @apply mb-16 flex justify-center;
+    margin-top: 5%;
     button {
       @apply h-12 w-40 mx-4 text-xl border-2 border-white border-solid transition-all;
       &:hover,
@@ -15,19 +16,27 @@
       @apply mx-24;
     }
     .article {
-      @apply font-semibold text-xl whitespace-pre-wrap;
-      width: 400px;
+      @apply font-semibold text-2xl whitespace-pre-wrap;
+      width: 25vw;
+      min-width: 400px;
     }
   }
   .price {
-    @apply flex justify-center text-center;
+    @apply flex justify-center text-center gap-x-c-10%;
     .price_intro {
       @apply mx-10;
+      .price_image {
+        @apply relative m-auto;
+        width: 12vw;
+        height: 12vw;
+        min-width: 200px;
+        min-height: 200px;
+      }
       h2 {
-        @apply my-4 text-3xl;
+        @apply my-8 text-5xl;
       }
       p {
-        @apply text-gray;
+        @apply text-gray text-xl;
       }
     }
   }
