@@ -1,0 +1,13 @@
+.reserve {
+  @apply flex items-center justify-center gap-c-10%;
+  height: calc(100vh - 135px);
+  .figure {
+    width: 100%;
+    height: 80%;
+    background-image: url("../../../public/reserve-figure.png"),
+      url("../../../public/reserve-figure-bg.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
