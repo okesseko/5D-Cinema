@@ -1,9 +1,18 @@
 const path = require("path");
 
 module.exports = {
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH,
-  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH,
-  sassOptions: {
-    includePaths: [path.join(__dirname, "styles")],
+  webpack(config) {
+    const rules = config.module.rules
+      .find((rule) => typeof rule.oneOf === "object")
+      .oneOf.filter((rule) => Array.isArray(rule.use));
+
+    rules.forEach((rule) => {
+      rule.use.forEach((moduleLoader) => {
+        if (moduleLoader.loader.includes("resolve-url-loader"))
+          moduleLoader.options.sourceMap = false;
+      });
+    });
+
+    return config;
   },
 };
