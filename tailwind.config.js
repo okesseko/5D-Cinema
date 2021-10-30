@@ -8,10 +8,14 @@ module.exports = {
         lightBlue: "#00DDF2",
         gray: "#A6A6A6",
       },
+      fontSize: {
+        "c-40": ["40px", "40px"],
+      },
       scale: {
         "c-1": "-1",
       },
       spacing: {
+        "c-72": "72px",
         "c-100": "100px",
         "c-200": "200px",
         "c-400": "400px",
