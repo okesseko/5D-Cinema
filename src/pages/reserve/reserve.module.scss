@@ -3,10 +3,26 @@
   height: calc(100vh - 100px);
   .figure {
     @apply absolute -left-1/4 w-full h-full bg-no-repeat self-end z-0;
-    background-image: url("../../../public/reserve-figure.png"),
+    background-image: url("../../../public/armor0.png"),
       url("../../../public/reserve-figure-bg.svg");
     background-position: center 70%, center;
     background-size: 15% 80%, contain;
+    &-1 {
+      background-image: url("../../../public/armor1.png"),
+        url("../../../public/reserve-figure-bg.svg");
+    }
+    &-2 {
+      background-image: url("../../../public/armor2.png"),
+        url("../../../public/reserve-figure-bg.svg");
+    }
+    &-3 {
+      background-image: url("../../../public/armor3.png"),
+        url("../../../public/reserve-figure-bg.svg");
+    }
+    &-4 {
+      background-image: url("../../../public/armor4.png"),
+        url("../../../public/reserve-figure-bg.svg");
+    }
   }
   .form {
     @apply flex flex-col z-10;
@@ -17,6 +33,9 @@
       input {
         @apply mt-2 px-4 py-1 border border-white border-solid bg-black text-white;
         width: 15vw;
+        &.error {
+          @apply border-red-600;
+        }
       }
     }
     button {
