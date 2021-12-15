@@ -4,4 +4,4 @@ const Reserve = () => {
   return <div>Reserve</div>;
 };
 
-export default Reserve;
+export default   Reserve;
