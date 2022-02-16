@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import Image from "next/image";
+import Image from "../component/image";
 import style from "./main.module.scss";
 const IMAGE_SRC = ["/the-flash.jpg", "/maze-runner.jpg", "/spider-man.jpg"];
 

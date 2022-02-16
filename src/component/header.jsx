@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Image from "../component/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import style from "./header.module.scss";
@@ -21,7 +21,7 @@ const Header = () => {
         </Link>
         <Link href="/">
           <div className={style.image}>
-            <Image width='400%' height='100%' src={"/logo.png"} />
+            <Image src="/logo.png" width="400%" height="100%" />
           </div>
         </Link>
         <Link href="/reserve">

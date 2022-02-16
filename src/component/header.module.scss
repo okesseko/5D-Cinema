@@ -1,6 +1,6 @@
 .header {
-  @apply fixed h-36 w-full  z-50 ;
-  background: url(../../public/header.png) center no-repeat;
+  @apply fixed h-36 w-full  z-50;
+  background: url("/header.png") center no-repeat;
   background-size: 100% 100%;
   ul {
     @apply relative flex justify-center;

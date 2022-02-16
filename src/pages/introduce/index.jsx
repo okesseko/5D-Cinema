@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import style from "./introduce.module.scss";
-import Image from "next/image";
+import Image from "../../component/image";
 const IMAGE_SRC = [
   ["/introduce-about1.png", "/introduce-about2.png"],
   ["/introduce-env1.png", "/introduce-env2.png"],
